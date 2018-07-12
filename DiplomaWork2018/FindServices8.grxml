@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar version="1.0" xml:lang="en-US" mode="voice" root="basicSpeech"
+ xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+
+  <rule id="basicSpeech" scope="public"> 
+     <one-of>
+      <item> Find <ruleref uri="#services"/> near <ruleref uri="#city"/> </item>
+      <item><ruleref uri="#ShopSentence"/></item>
+      <item><ruleref uri="#buyShirt"/></item>
+      <item><ruleref uri="#thisIsSomething"/></item>
+      <item><ruleref uri="#godBless"/></item>
+      <item><ruleref uri="#diplomaHardWork"/></item>
+      <item><ruleref uri="#iLoveYou"/></item>
+    </one-of>
+    <item repeat="0-1"> next </item>
+  </rule>
+
+  <rule id="services" scope="public">
+    <one-of>
+      <item> restaurants </item>
+      <item> gas stations </item>
+      <item> coffee </item>
+    </one-of>
+  </rule>
+
+  <rule id="city" scope="public">
+    <one-of>
+      <item> Seattle </item>
+      <item> Madrid </item>
+      <item> London </item>
+    </one-of>
+  </rule>
+
+ <rule id="ShopSentence" scope="public">
+    <item> I would like to </item>
+    <one-of>
+      <item> buy </item>
+      <item> get </item>
+    </one-of>
+    <ruleref uri="#Products" />
+  </rule>
+
+ <rule id="Products" scope="public">
+    <one-of>
+      <item> milk </item> 
+      <item> bread </item> 
+      <item> cookies </item>
+      <item> flour </item>
+    </one-of>
+  </rule>
+
+  <rule id="buyShirt" scope="public">
+    <item>
+      Get me a <ruleref uri="#ruleColors" />
+      shirt and a <ruleref uri="#ruleColors"/>
+      tie
+    </item>
+  </rule>
+
+  <rule id="ruleColors" scope="public">
+    <one-of>
+      <item> red </item>
+      <item> white </item>
+      <item> green </item>
+    </one-of>
+  </rule>
+        
+  <rule id="thisIsSomething" scope="public">
+       <item> This is <ruleref uri="#strangeWords"/> </item>
+  </rule>
+  
+  <rule id="strangeWords" scope="public">
+        <item>
+                <one-of>
+                        <item>awesome</item>
+                        <item>perfect</item>
+                        <item>good</item>
+                        <item>bad</item>
+                        <item>terrible</item>
+                </one-of>
+        </item>
+  </rule>
+  
+  <rule id="godBless" scope="public">
+        <item>God bless</item>
+  </rule>
+  
+
+  <rule id="diplomaHardWork" scope="public">
+        <item> Making <ruleref uri="#verbsNounsAdjectivePartOne"/> <ruleref uri="#verbsNounsAdjectivePartOne"/> hard </item>
+  </rule>
+  
+  <rule id="verbsNounsAdjectivePartOne" scope="public">
+  <item repeat="0-1">
+        <one-of>
+                <item>this</item>
+                <item>is</item>
+                <item>go</item>
+        </one-of>
+  </item>
+  </rule>      
+  
+  <rule id="iLoveYou" scope="public">
+        <item>I love you</item>
+  </rule>
+        
+</grammar>
