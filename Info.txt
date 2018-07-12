@@ -1,0 +1,10 @@
+So basically this is my diploma work and it creates a Word file from your speech. Using a dictionary with words. Its created using
+MFC - Windows API. A simple application just a preview of the code. If you desire to compile and run it you will need these
+libraries added to your project, else it won't run at all. 
+  Here they are :
+      •	MSWORD.OLB
+      •	WinMM.lib
+      •	kernel32.lib
+      •	user32.lib
+      •	comdlg32.lib
+Also copy paste the Dictionary file ("FindServices8.grxml") to your debug/release folder.
